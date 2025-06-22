@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    background: linear-gradient(to bottom, #ffdee9, #b5fffc);
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .envelope-wrapper {
+    position: relative;
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  .envelope {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #ffeaa0;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    border-radius: 8px;
+  }
+  
+  .envelope .flap {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: #f3d7a7;
+    top: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transform-origin: top;
+    transition: transform 1s;
+  }
+  
+  .envelope.open .flap {
+    transform: rotateX(-180deg);
+  }
+  
+  .envelope .letter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 150px;
+    pointer-events: none;
+  }
+  
+  .message {
+    display: none;
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.3);
+    z-index: 1;
+  }
